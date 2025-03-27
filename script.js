@@ -64,10 +64,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
-            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-            contactForm.reset();
+            // Show loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_email: 'agastya.kalagarla@gmail.com'
+            };
+
+            // Send email using EmailJS
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(() => {
+                    alert('Thank you for your message! I\'ll get back to you soon.');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('Sorry, there was an error sending your message. Please try again later.');
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                });
         });
     }
     

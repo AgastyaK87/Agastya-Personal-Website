@@ -1,0 +1,7 @@
+// EmailJS configuration
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+// Initialize EmailJS
+emailjs.init(EMAILJS_PUBLIC_KEY);

@@ -221,21 +221,17 @@ nav {
     justify-content: center;
 }
 
-.image-placeholder {
+.profile-image {
     width: 300px;
     height: 300px;
-    background-color: #e5e7eb;
     border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--light-text);
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.image-placeholder i {
-    font-size: 5rem;
-    margin-bottom: 10px;
+.profile-image:hover {
+    transform: scale(1.05);
 }
 
 .contact-info {
