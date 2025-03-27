@@ -1,7 +1,7 @@
 // EmailJS configuration
-const EMAILJS_PUBLIC_KEY = 'public_key';
-const EMAILJS_SERVICE_ID = 'service_id';
-const EMAILJS_TEMPLATE_ID = 'template_id';
+const EMAILJS_PUBLIC_KEY = 'Wd_Oc5Pu9Hs-Gy_Aq';
+const EMAILJS_SERVICE_ID = 'service_agastya';
+const EMAILJS_TEMPLATE_ID = 'template_contact';
 
 // Initialize EmailJS with error handling
 try {

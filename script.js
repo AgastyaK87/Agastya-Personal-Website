@@ -75,7 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 from_name: name,
                 from_email: email,
                 message: message,
-                to_email: 'agastya.kalagarla@gmail.com'
+                to_name: 'Agastya Kalagarla',
+                to_email: 'agastya.kalagarla@gmail.com',
+                subject: 'New Contact Form Message'
             };
 
             // Send email using EmailJS
