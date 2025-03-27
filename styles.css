@@ -108,6 +108,23 @@ header {
     position: relative;
 }
 
+.view-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-counter i {
+    font-size: 1rem;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -834,6 +851,38 @@ footer {
 
 .nav-active {
     transform: translateX(0%);
+}
+
+.view-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.view-counter:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.view-counter i {
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+    .view-counter {
+        position: static;
+        margin: 20px auto 0;
+        display: inline-flex;
+    }
 }
 
 /* Utility Classes */

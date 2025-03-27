@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Track page view
+    fetch('http://localhost:3000/api/views', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Create view counter element
+        const viewCounter = document.createElement('div');
+        viewCounter.className = 'view-counter';
+        viewCounter.innerHTML = `<i class="fas fa-eye"></i> ${data.views} views`;
+        document.querySelector('header .container').appendChild(viewCounter);
+    })
+    .catch(error => console.error('Error:', error));
+
     // Mobile Navigation Toggle
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
