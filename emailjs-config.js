@@ -1,7 +1,15 @@
 // EmailJS configuration
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY = 'public_key';
+const EMAILJS_SERVICE_ID = 'service_id';
+const EMAILJS_TEMPLATE_ID = 'template_id';
 
-// Initialize EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY);
+// Initialize EmailJS with error handling
+try {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+} catch (error) {
+    console.error('Failed to initialize EmailJS:', error);
+}
+
+// Export the constants for use in script.js
+window.EMAILJS_SERVICE_ID = EMAILJS_SERVICE_ID;
+window.EMAILJS_TEMPLATE_ID = EMAILJS_TEMPLATE_ID;
